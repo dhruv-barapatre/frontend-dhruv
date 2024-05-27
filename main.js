@@ -176,41 +176,41 @@ function populateForm(id) {
 updatePitchBtn.addEventListener("click", () => {
     let updatedData = {
         title: updatePitchTitleInput.value,
-        id: updatePitchIdInput.value,
         image: updatePitchImageInput.value,
         founder: updatePitchfounderInput.value,
         category: updatePitchCategoryInput.value,
         price: updatePitchPriceInput.value
     }
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updatedData.id}`, {
+    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updatePitchIdInput.value}`, {
         method: "PUT",
         headers: {
-            "Content-type": "application/data"
+            "Content-Type": "application/json" // Corrected Content-Type
         },
         body: JSON.stringify(updatedData)
     }).then((res) => res.json())
         .then((data) => {
-            alert("Updated Successfully....")
+            alert("Updated Successfully....");
             window.location.reload();
-        }).catch((err) => console.log(err))
-})
+        }).catch((err) => console.log(err));
+});
+
 updatePricePitchPriceButton.addEventListener("click", () => {
     let updateprice = {
-        id: updatePricePitchId.value,
         price: updatePricePitchPrice.value
     }
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updateprice.id}`, {
+    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updatePricePitchId.value}`, {
         method: "PATCH",
         headers: {
-            "Content-type": "application/data"
+            "Content-Type": "application/json" // Corrected Content-Type
         },
         body: JSON.stringify(updateprice)
     }).then((res) => res.json())
         .then((data) => {
-            alert("Price Updated Successfully....")
+            alert("Price Updated Successfully....");
             window.location.reload();
-        }).catch((err) => console.log(err))
-})
+        }).catch((err) => console.log(err));
+});
+
 // Search functionality
 searchByButton.addEventListener("click", () => {
     if (searchBySelect.value === "" || searchByInput.value === "") {
@@ -232,7 +232,7 @@ searchByButton.addEventListener("click", () => {
         if (searched.length === 0) {
             onecardData(prodata)
             alert("not found")
-        }else{
+        } else {
 
             onecardData(searched)
         }
