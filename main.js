@@ -40,13 +40,15 @@ let searchByButton = document.getElementById("search-by-button");
 
 // fetch data from server_________________
 let prodata = []
-fetch("https://frontendsideadityagotafode.onrender.com/pitches")
+document.addEventListener("load",()=>{
+    fetch("https://frontendsideadityagotafode.onrender.com/pitches")
     .then((res) => res.json())
     .then((json) => {
         onecardData(json)
         prodata = json
     })
     .catch((err) => console.log(err));
+})
 
 function onecardData(data) {
     let store = data.map((data) => cardlist(data.title, data.id, data.image, data.price, data.description, data.founder, data.category));
