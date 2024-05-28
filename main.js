@@ -41,7 +41,7 @@ let searchByButton = document.getElementById("search-by-button");
 // fetch data from server_________________
 let prodata = []
 document.addEventListener("load",()=>{
-    fetch("https://frontendsideadityagotafode.onrender.com/pitches")
+    fetch("https://monish-barapatre.onrender.com/pitches")
     .then((res) => res.json())
     .then((json) => {
         onecardData(json)
@@ -85,7 +85,7 @@ pitchCreateBtn.addEventListener("click", () => {
         founder: pitchfounderInput.value,
         price: pitchPriceInput.value
     }
-    fetch("https://frontendsideadityagotafode.onrender.com/pitches", { // Correct URL
+    fetch("https://monish-barapatre.onrender.com/pitches", { // Correct URL
         method: "POST",
         headers: {
             'Content-Type': 'application/json', // Correct capitalization
@@ -114,7 +114,7 @@ document.addEventListener("click", (e) => {
     }
 });
 function delpitches(id) {
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${id}`, {
+    fetch(`https://monish-barapatre.onrender.com/pitches/${id}`, {
         method: "DELETE"
     })
         .then(res => { res.json() })
@@ -161,7 +161,7 @@ document.addEventListener("click", (e) => {
     }
 })
 function populateForm(id) {
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${id}`)
+    fetch(`https://monish-barapatre.onrender.com/pitches/${id}`)
         .then((res) => res.json())
         .then((data) => {
             updatePitchIdInput.value = data.id;
@@ -183,7 +183,7 @@ updatePitchBtn.addEventListener("click", () => {
         category: updatePitchCategoryInput.value,
         price: updatePitchPriceInput.value
     }
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updatePitchIdInput.value}`, {
+    fetch(`https://monish-barapatre.onrender.com/pitches/${updatePitchIdInput.value}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json" // Corrected Content-Type
@@ -200,7 +200,7 @@ updatePricePitchPriceButton.addEventListener("click", () => {
     let updateprice = {
         price: updatePricePitchPrice.value
     }
-    fetch(`https://frontendsideadityagotafode.onrender.com/pitches/${updatePricePitchId.value}`, {
+    fetch(`https://monish-barapatre.onrender.com/pitches/${updatePricePitchId.value}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json" // Corrected Content-Type

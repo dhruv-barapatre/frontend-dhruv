@@ -15,7 +15,7 @@
 <script>
     let cards = document.getElementById("cardlist")
     let prodata = []
-    fetch("https://frontendsideadityagotafode.onrender.com/cart")
+    fetch("https://monish-barapatre.onrender.com/cart")
         .then((res) => res.json())
         .then((json) => {
             onecardData(json)
@@ -57,7 +57,7 @@
         }
     });
     function delpitches(id) {
-        fetch(`https://frontendsideadityagotafode.onrender.com/cart/${id}`, {
+        fetch(`https://monish-barapatre.onrender.com/cart/${id}`, {
             method: "DELETE"
         })
             .then(res => { res.json() })
